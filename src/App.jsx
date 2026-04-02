@@ -11,7 +11,7 @@ const DEFAULT_PRODUCTS = [
 { id: 5, category:“protectors”, nameEn:“Tempered Glass”, nameAr:“زجاج مقسى”, descEn:“9H hardness, full coverage. Zero bubbles, ultra-clear.”, descAr:“صلابة 9H. تغطية كاملة بدون فقاعات.”, priceEn:“From 80 LE”, priceAr:“يبدأ من 80 جنيه”, quantity:30, active:true },
 { id: 6, category:“protectors”, nameEn:“Privacy Glass”, nameAr:“شاشة برايفسي”, descEn:“Anti-spy tempered glass. Blocks side viewing angles.”, descAr:“زجاج مضاد للتجسس. يمنع الرؤية الجانبية.”, priceEn:“From 100 LE”, priceAr:“يبدأ من 100 جنيه”, quantity:18, active:true },
 { id: 7, category:“protectors”, nameEn:“Matte Anti-Glare Glass”, nameAr:“زجاج مضاد للوهج”, descEn:“Reduces fingerprints and glare. Paper-like writing feel.”, descAr:“يقلل البصمات والوهج. ملمس ورقي ناعم.”, priceEn:“From 95 LE”, priceAr:“يبدأ من 95 جنيه”, quantity:5, active:true },
-{ id: 8, category:“protectors”, nameEn:“Bundle — Case + Protector”, nameAr:“عرض — كفر + شاشة حماية”, descEn:“Best value: any case + any screen protector together.”, descAr:“أفضل قيمة: أي كفر + أي شاشة حماية معاً.”, priceEn:“From 220 LE”, priceAr:“يبدأ من 220 جنيه”, quantity:10, active:true },
+{ id: 8, category:“protectors”, nameEn:“Bundle – Case + Protector”, nameAr:“عرض – كفر + شاشة حماية”, descEn:“Best value: any case + any screen protector together.”, descAr:“أفضل قيمة: أي كفر + أي شاشة حماية معاً.”, priceEn:“From 220 LE”, priceAr:“يبدأ من 220 جنيه”, quantity:10, active:true },
 ];
 
 const ADMIN_KEY = “ravinna_admin_pass”;
@@ -383,7 +383,7 @@ return (
               <h3 style={{ fontSize:"1.2rem",fontWeight:300,fontStyle:"italic",marginBottom:20 }}>Settings</h3>
               <div style={{ background:"#fff",border:"1px solid #ebebeb",padding:"22px",marginBottom:16 }}>
                 <p style={{ fontWeight:600,fontSize:".9rem",marginBottom:4 }}>Change Admin Password</p>
-                <p style={{ fontSize:".8rem",color:"#aaa",marginBottom:14 }}>Use a password you'll remember — min 6 characters.</p>
+                <p style={{ fontSize:".8rem",color:"#aaa",marginBottom:14 }}>Use a password you'll remember -- min 6 characters.</p>
                 {!changePassMode
                   ? <button onClick={()=>setChangePassMode(true)} style={{ padding:"9px 20px",border:"1px solid #ddd",background:"none",fontFamily:"inherit",fontSize:".8rem",cursor:"pointer",color:"#555" }}>Change Password</button>
                   : <>
@@ -415,7 +415,7 @@ return (
         <div>
           <p style={{ fontSize:".7rem",letterSpacing:".2em",textTransform:"uppercase",color:"#aaa",marginBottom:14 }}>{isAr?"كفرات وشاشات حماية للآيفون":"iPhone Cases & Screen Protectors"}</p>
           <h1 className="ht" style={{ fontSize:"3rem",fontWeight:300,lineHeight:1.15,marginBottom:20,fontStyle:"italic" }}>{isAr?"احمِ آيفونك بأناقة":"Protect Your iPhone"}</h1>
-          <p style={{ fontSize:"1rem",color:"#777",lineHeight:1.75,marginBottom:32,maxWidth:400 }}>{isAr?"كفرات وشاشات حماية مميزة — مختارة بعناية لكل موديلات الآيفون.":"Premium cases and screen protectors — carefully selected for every iPhone model."}</p>
+          <p style={{ fontSize:"1rem",color:"#777",lineHeight:1.75,marginBottom:32,maxWidth:400 }}>{isAr?"كفرات وشاشات حماية مميزة -- مختارة بعناية لكل موديلات الآيفون.":"Premium cases and screen protectors -- carefully selected for every iPhone model."}</p>
           <button className="hb" onClick={scrollToProducts}>{isAr?"تسوق الآن":"Shop Now"}</button>
         </div>
         <div className="hp" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px" }}>
@@ -523,7 +523,7 @@ return (
             <p style={{ fontSize:".68rem",letterSpacing:".15em",textTransform:"uppercase",color:"#aaa",marginBottom:6 }}>{isAr?"اختر طريقة الدفع":"Choose Payment Method"}</p>
             <p style={{ fontSize:".8rem",color:"#999",marginBottom:14 }}>{isAr?"اختر كيف تريد الدفع قبل التأكيد.":"Select how you'd like to pay before confirming."}</p>
             {[
-              { key:"cod", label:isAr?"شحن فقط 100 جنيه + كاش عند الاستلام":"Shipping Only (100 LE) — Pay Product Price on Delivery", tag:isAr?"الأكثر شيوعاً":"Most Popular", desc:isAr?"حوّل 100 جنيه رسوم شحن مقدماً. تدفع سعر المنتج كاش عند التوصيل.":"Transfer 100 LE shipping fee in advance. Product price paid in cash on delivery." },
+              { key:"cod", label:isAr?"شحن فقط 100 جنيه + كاش عند الاستلام":"Shipping Only (100 LE) -- Pay Product Price on Delivery", tag:isAr?"الأكثر شيوعاً":"Most Popular", desc:isAr?"حوّل 100 جنيه رسوم شحن مقدماً. تدفع سعر المنتج كاش عند التوصيل.":"Transfer 100 LE shipping fee in advance. Product price paid in cash on delivery." },
               { key:"full", label:isAr?"دفع كامل أونلاين":"Pay in Full Online", tag:isAr?"اختياري":"Optional", desc:isAr?"حوّل المبلغ الكامل (سعر المنتج + 100 جنيه شحن) عبر إنستاباي أو أي محفظة إلكترونية. لا كاش عند الاستلام.":"Transfer full amount (product price + 100 LE shipping) via Instapay or any e-wallet. No cash needed on delivery." },
             ].map(opt => (
               <div key={opt.key} className={`pay-opt${payMethod===opt.key?" sel":""}`} onClick={()=>setPayMethod(opt.key)} style={{ marginBottom:10 }}>
@@ -545,7 +545,7 @@ return (
               </div>
             ))}
           </div>
-          <button className="cfb" onClick={handleConfirm}>{isAr?"تأكيد الاختيار — عرض طريقة الطلب":"Confirm Selection — See How to Order"}</button>
+          <button className="cfb" onClick={handleConfirm}>{isAr?"تأكيد الاختيار -- عرض طريقة الطلب":"Confirm Selection -- See How to Order"}</button>
         </>)}
 
         {showSteps && (
@@ -580,7 +580,7 @@ return (
               </div>
 
               <div className="notebar" style={{ marginBottom:30,background:payMethod==="full"?"#e8f5e9":"#f0f0ed",borderLeft:isAr?"none":`3px solid #1a1a1a`,borderRight:isAr?`3px solid #1a1a1a`:"none" }}>
-                {payMethod==="full"?(isAr?"✅ تم الدفع الكامل أونلاين — لا حاجة لكاش عند الاستلام.":"✅ Full payment online — no cash needed on delivery."):(isAr?"💬 سعر المنتج يُدفع كاش عند التوصيل — فقط الشحن (100 جنيه) مقدماً.":"💬 Product price paid Cash on Delivery — only shipping (100 LE) upfront.")}
+                {payMethod==="full"?(isAr?"✅ تم الدفع الكامل أونلاين -- لا حاجة لكاش عند الاستلام.":"✅ Full payment online -- no cash needed on delivery."):(isAr?"💬 سعر المنتج يُدفع كاش عند التوصيل -- فقط الشحن (100 جنيه) مقدماً.":"💬 Product price paid Cash on Delivery -- only shipping (100 LE) upfront.")}
               </div>
 
               <p style={{ fontSize:".7rem",letterSpacing:".12em",textTransform:"uppercase",color:"#aaa",marginBottom:12 }}>{isAr?"ارسل إيصالك وطلبك إلى:":"Send your receipt & order to:"}</p>
